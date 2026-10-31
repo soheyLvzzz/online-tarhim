@@ -1,0 +1,11 @@
+node_modules/
+dist/
+preview.html
+OPEN-*.html
+.env
+.env.*
+!.env.example
+*.local
+*.log
+__pycache__/
+*.pyc
