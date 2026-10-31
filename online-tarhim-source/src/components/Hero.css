@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Yekan Bakh';
+  src: url('/fonts/YekanBakh-ExtraBold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IRANSansXFaNum';
+  src: url('/fonts/IRANSansXFaNum-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IRANSansX';
+  src: url('/fonts/IRANSansX-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+.memorial-hero {
+  --hero-text: #e2e2e2;
+  --hero-brand: #d1c56c;
+  position: relative;
+  isolation: isolate;
+  width: var(--page-width, 1440px);
+  min-width: 1440px;
+  height: 1024px;
+  overflow: visible;
+  background: transparent;
+  color: var(--hero-text);
+  text-align: start;
+}
+.memorial-hero *, .memorial-hero *::before, .memorial-hero *::after { box-sizing: border-box; }
+.memorial-hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.memorial-hero__shade {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 65.069444%;
+  z-index: -1;
+  background: linear-gradient(268.63013608521686deg, #000 1.2691%, rgb(0 0 0 / 0) 98.731%);
+}
+.memorial-hero__content {
+  position: relative;
+  margin-inline-start: var(--page-gutter, 50px);
+  margin-inline-end: auto;
+  direction: rtl;
+  text-align: right;
+  padding-block-start: 381px;
+  width: 510px;
+}
+.memorial-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 21px;
+  color: var(--hero-brand);
+  font-family: 'IRANSansXFaNum';
+  font-size: 14px;
+  line-height: 21px;
+  white-space: nowrap;
+}
+.memorial-hero__eyebrow img { display: block; flex-shrink: 0; }
+.memorial-hero h1 {
+  margin: 12px 0 0;
+  font-family: 'Yekan Bakh';
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 74px;
+  white-space: nowrap;
+}
+.memorial-hero__description {
+  margin: 0;
+  width: 510px;
+  font-family: 'IRANSansXFaNum';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.memorial-hero__actions { display: flex; gap: 8px; margin-block-start: 27px; }
+.memorial-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 44px;
+  padding: 10px 20px;
+  border: 1px solid var(--hero-brand);
+  border-radius: 4px;
+  font-family: 'IRANSansX';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 220ms ease, color 220ms ease, transform 220ms ease;
+}
+.memorial-hero__button--primary { width: 193px; background: var(--hero-brand); color: #000; }
+.memorial-hero__button--secondary { width: 184px; background: transparent; color: var(--hero-text); }
+.memorial-hero__button:focus-visible { outline: 2px solid var(--hero-text); outline-offset: 4px; }
+.memorial-hero__button--primary:focus-visible { background-color: transparent; color: var(--hero-text); }
+.memorial-hero__button--secondary:focus-visible { background-color: var(--hero-brand); color: #000; }
+@media (hover: hover) {
+  .memorial-hero__button:hover { transform: translateY(-2px); }
+  .memorial-hero__button--primary:hover { background-color: transparent; color: var(--hero-text); }
+  .memorial-hero__button--secondary:hover { background-color: var(--hero-brand); color: #000; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .memorial-hero__button { transition: none; }
+  .memorial-hero__button:hover { transform: none; }
+}

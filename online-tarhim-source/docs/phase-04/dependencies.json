@@ -1,0 +1,67 @@
+{
+  "scope": "first-release-static-landing-with-direct-contact",
+  "observed_on": "2026-10-31",
+  "node_observed": "v24.22.1",
+  "hosting_runtime": "static-files-only; Node.js is required at build time, not to serve dist",
+  "lockfile": "package-lock.json exists; versions reproduced for release must come from its locked tree",
+  "new_dependencies_added": [],
+  "checks": {
+    "npm_ls_depth_0": "passed",
+    "npm_run_build": "passed, including tsc --noEmit"
+  },
+  "not_verified": [
+    "dependency vulnerability audit",
+    "browser and mobile compatibility",
+    "deployment to actual host"
+  ],
+  "dependencies": [
+    {
+      "name": "react",
+      "declared_range": "^19.2.0",
+      "observed_installed_version": "19.3.1",
+      "group": "dependencies",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    {
+      "name": "react-dom",
+      "declared_range": "^19.2.0",
+      "observed_installed_version": "19.3.1",
+      "group": "dependencies",
+      "engines": {}
+    },
+    {
+      "name": "@types/react",
+      "declared_range": "^19.2.0",
+      "observed_installed_version": "19.3.0",
+      "group": "devDependencies",
+      "engines": {}
+    },
+    {
+      "name": "@types/react-dom",
+      "declared_range": "^19.2.0",
+      "observed_installed_version": "19.3.0",
+      "group": "devDependencies",
+      "engines": {}
+    },
+    {
+      "name": "typescript",
+      "declared_range": "^5.9.3",
+      "observed_installed_version": "5.9.3",
+      "group": "devDependencies",
+      "engines": {
+        "node": ">=14.17"
+      }
+    },
+    {
+      "name": "vite",
+      "declared_range": "^7.2.0",
+      "observed_installed_version": "7.3.7",
+      "group": "devDependencies",
+      "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+      }
+    }
+  ]
+}

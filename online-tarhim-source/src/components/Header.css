@@ -1,0 +1,32 @@
+@font-face { font-family: 'Yekan Bakh'; src: url('/fonts/YekanBakh-Regular.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'IRANSansX'; src: url('/fonts/IRANSansX-Regular.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'IRANSansXFaNum'; src: url('/fonts/IRANSansXFaNum-Medium.woff2') format('woff2'); font-style: normal; font-weight: 500; font-display: swap; }
+.site-header { position: absolute; z-index: 2; inset-block-start: 32px; inset-inline: 50px; max-width: 1340px; margin-inline: auto; height: 48px; color: #e2e2e2; }
+.site-header button { padding: 0; border: 0; background: none; color: inherit; cursor: pointer; transition: color 220ms ease, transform 220ms ease; }
+.site-header__brand { position: absolute; right: 0; left: auto; direction: rtl; display: flex; align-items: center; gap: 16px; height: 48px; text-align: right; }
+.site-header__logo { position: relative; display: block; width: 47.632px; height: 48px; overflow: hidden; flex-shrink: 0; }
+.site-header__logo img { position: absolute; width: 124.71%; height: 131.8%; left: -14.29%; top: -16.48%; max-width: none; }
+.site-header__brand-copy { position: relative; display: flex; height: 25px; flex-direction: column; justify-content: center; font-family: 'Yekan Bakh'; white-space: nowrap; }
+.site-header__brand-copy strong { font-weight: 800; font-size: 16px; line-height: 25px; color: #fff; transition: color 220ms ease; }
+.site-header__brand-copy > span { position: absolute; inset-block-start: calc(100% + 2px); inset-inline-start: 0; font-weight: 400; font-size: 12px; line-height: 19px; color: #d1c56c; }
+.site-header__navigation { position: absolute; left: 50%; transform: translateX(-50%); inset-block-start: 14px; width: 666px; display: flex; justify-content: center; gap: 32px; align-items: center; }
+.site-header__navigation button { font-family: 'IRANSansX'; font-size: 14px; line-height: 21px; font-weight: 400; white-space: nowrap; }
+.site-header__navigation button[aria-current] { color: #d1c56c; }
+.site-header__phone { position: absolute; left: 0; right: auto; direction: ltr; display: flex; justify-content: center; align-items: center; gap: 8px; width: 161px; height: 48px; padding: 10px 20px; box-sizing: border-box; background: #2d2d2d; border: 1px solid #343434; border-radius: 4px; color: #fff; text-decoration: none; font-family: 'IRANSansXFaNum'; font-weight: 500; font-size: 14px; line-height: 21px; white-space: nowrap; transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease, transform 220ms ease; }
+.site-header__phone-icon { display: block; flex-shrink: 0; width: 16px; height: 16px; }
+.site-header__phone-icon img { display: block; transform: scaleX(-1); transition: filter 220ms ease; }
+.site-header button:focus-visible, .site-header a:focus-visible { outline: 2px solid #d1c56c; outline-offset: 5px; }
+.site-header__navigation button:focus-visible, .site-header__brand:focus-visible strong { color: #d1c56c; }
+.site-header__phone:focus-visible { background-color: #d1c56c; border-color: #d1c56c; color: #000; }
+.site-header__phone:focus-visible .site-header__phone-icon img { filter: brightness(0); }
+@media (hover: hover) {
+  .site-header__navigation button:hover { color: #d1c56c; transform: translateY(-2px); }
+  .site-header__brand:hover { transform: translateY(-2px); }
+  .site-header__brand:hover strong { color: #d1c56c; }
+  .site-header__phone:hover { background-color: #d1c56c; border-color: #d1c56c; color: #000; transform: translateY(-2px); }
+  .site-header__phone:hover .site-header__phone-icon img { filter: brightness(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header button, .site-header__brand-copy strong, .site-header__phone, .site-header__phone-icon img { transition: none; }
+  .site-header__navigation button:hover, .site-header__brand:hover, .site-header__phone:hover { transform: none; }
+}

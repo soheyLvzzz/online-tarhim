@@ -1,0 +1,57 @@
+@font-face { font-family: 'Yekan Bakh'; src: url('/fonts/YekanBakh-Bold.woff2') format('woff2'); font-style: normal; font-weight: 700; font-display: swap; }
+@font-face { font-family: 'IRANSansX'; src: url('/fonts/IRANSansX-DemiBold.woff2') format('woff2'); font-style: normal; font-weight: 600; font-display: swap; }
+
+.memorial-about {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  min-width: 1440px;
+  width: var(--page-width, 1440px);
+  height: 471px;
+  margin: 0;
+  margin-block-start: var(--section-gap, 160px);
+  overflow: visible;
+  background: transparent;
+  color: #e2e2e2;
+  text-align: start;
+}
+.memorial-about__background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+.memorial-about__shade {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  z-index: -1;
+  width: 65.069444%;
+  background: linear-gradient(267.0629032072675deg, #181818 68.21%, rgb(24 24 24 / 0) 98.747%);
+}
+.memorial-about__content { width: 660px; margin-inline-start: var(--page-gutter, 50px); margin-inline-end: auto; padding-block-start: 80px; direction: rtl; text-align: right; }
+.memorial-about__eyebrow { display: flex; align-items: center; gap: 24px; height: 21px; color: #d1c56c; font-family: 'IRANSansXFaNum'; font-size: 14px; font-weight: 400; line-height: 21px; }
+.memorial-about__eyebrow img { display: block; flex-shrink: 0; }
+.memorial-about h2 { margin: 8px 0 20px; color: #fff; font-family: 'Yekan Bakh'; font-size: 36px; font-weight: 700; line-height: 56px; }
+.memorial-about__intro, .memorial-about__details { margin: 0; font-family: 'IRANSansX'; font-size: 16px; font-weight: 500; line-height: 24px; }
+.memorial-about__details { margin-block-start: 8px; }
+.memorial-about__closing { margin: 8px 0 0; color: #d1c56c; font-family: 'IRANSansX'; font-size: 16px; font-weight: 600; line-height: 24px; }
+
+@keyframes about-appear { from { opacity: 0; } to { opacity: 1; } }
+@keyframes about-rise { from { opacity: 0; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .memorial-about[data-reveal='pending'] .memorial-about__background,
+  .memorial-about[data-reveal='pending'] .memorial-about__shade,
+  .memorial-about[data-reveal='pending'] .memorial-about__content > * { opacity: 0; }
+  .memorial-about[data-reveal='entered'] .memorial-about__background,
+  .memorial-about[data-reveal='entered'] .memorial-about__shade { animation: about-appear 1400ms ease-out backwards; }
+  .memorial-about[data-reveal='entered'] .memorial-about__content > * { animation: about-rise 1000ms cubic-bezier(.22, 1, .36, 1) var(--about-delay, 120ms) backwards; }
+  .memorial-about h2 { --about-delay: 240ms; }
+  .memorial-about__intro { --about-delay: 360ms; }
+  .memorial-about__details { --about-delay: 480ms; }
+  .memorial-about__closing { --about-delay: 600ms; }
+}

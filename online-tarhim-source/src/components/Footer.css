@@ -1,0 +1,42 @@
+.site-footer { position: relative; isolation: isolate; width: 1440px; box-sizing: border-box; margin-block-start: 80px; padding: 32px 50px; color: #e2e2e2; text-align: right; }
+.site-footer::before { content: ''; position: absolute; z-index: -1; inset-block: 0; left: 50%; width: max(1440px, 100cqw); transform: translateX(-50%); background: #181818; }
+.site-footer__brand { display: flex; align-items: center; gap: 16px; height: 48px; margin-block-end: 32px; }
+.site-footer__logo { position: relative; display: block; width: 47.632px; height: 48px; overflow: hidden; flex-shrink: 0; }
+.site-footer__logo img { position: absolute; width: 124.71%; height: 131.8%; left: -14.29%; top: -16.48%; max-width: none; }
+.site-footer__brand-copy { font-family: 'Yekan Bakh'; }
+.site-footer__brand-copy strong { display: block; color: #fff; font-size: 16px; font-weight: 800; line-height: 25px; }
+.site-footer__brand-copy p { margin: 2px 0 0; color: #d1c56c; font-size: 12px; font-weight: 400; line-height: 19px; }
+.site-footer__columns { display: grid; grid-template-columns: 152px 94px 235px; column-gap: 160px; padding-block: 31px 32px; border-block: 1px solid #343434; }
+.site-footer h2 { margin: 0 0 8px; color: #d1c56c; font-family: 'Yekan Bakh'; font-size: 24px; font-weight: 400; line-height: 37px; }
+.site-footer ul { display: flex; flex-direction: column; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.site-footer li { height: 24px; }
+.site-footer__link { padding: 0; border: 0; background: none; color: #e2e2e2; font-family: 'IRANSansX'; font-size: 16px; font-weight: 400; line-height: 24px; cursor: pointer; transition: color 260ms ease; }
+.site-footer__contact p { margin: 0 0 8px; font-family: 'IRANSansX'; font-size: 16px; line-height: 24px; white-space: nowrap; }
+.site-footer__contact a { color: inherit; text-decoration: none; }
+.site-footer__contact a[href^='tel:'] { font-family: 'IRANSansXFaNum'; font-weight: 500; }
+.site-footer__socials { display: flex; gap: 8px; }
+.site-footer__social { display: block; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; transition: transform 280ms ease; }
+.site-footer__social img { display: block; }
+.site-footer button:focus-visible, .site-footer a:focus-visible { outline: 2px solid #d1c56c; outline-offset: 5px; }
+.site-footer__link:focus-visible { color: #d1c56c; }
+.site-footer__copyright { margin: 31px 0 0; text-align: center; font-family: 'IRANSansXFaNum'; font-size: 16px; font-weight: 400; line-height: 24px; }
+@media (hover: hover) {
+  .site-footer__link:hover { color: #d1c56c; }
+  .site-footer__social:hover { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .site-footer[data-reveal='pending'] .site-footer__brand,
+  .site-footer[data-reveal='pending'] .site-footer__column,
+  .site-footer[data-reveal='pending'] .site-footer__copyright { opacity: 0; }
+  .site-footer[data-reveal='entered'] .site-footer__brand,
+  .site-footer[data-reveal='entered'] .site-footer__column,
+  .site-footer[data-reveal='entered'] .site-footer__copyright { animation: tarhim-rise 1000ms cubic-bezier(.22, 1, .36, 1) var(--footer-delay, 0ms) backwards; }
+  .site-footer__column:nth-child(1) { --footer-delay: 120ms; }
+  .site-footer__column:nth-child(2) { --footer-delay: 240ms; }
+  .site-footer__column:nth-child(3) { --footer-delay: 360ms; }
+  .site-footer__copyright { --footer-delay: 480ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__link, .site-footer__social { transition: none; }
+  .site-footer__social:hover { transform: none; }
+}

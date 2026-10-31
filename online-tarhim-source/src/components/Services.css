@@ -1,0 +1,41 @@
+.memorial-services { position: relative; isolation: isolate; width: 1440px; box-sizing: border-box; margin-block-start: 80px; padding: 80px 50px; color: #e2e2e2; text-align: right; }
+.memorial-services::before { content: ''; position: absolute; z-index: -1; inset-block: 0; left: 50%; width: max(1440px, 100cqw); transform: translateX(-50%); background: #181818; }
+.memorial-services__eyebrow { display: flex; align-items: center; gap: 24px; height: 21px; color: #d1c56c; font-family: 'IRANSansXFaNum'; font-size: 14px; font-weight: 400; line-height: 21px; }
+.memorial-services__eyebrow img { display: block; flex-shrink: 0; }
+.memorial-services h2 { margin: 8px 0 0; color: #fff; font-family: 'Yekan Bakh'; font-size: 36px; font-weight: 700; line-height: 56px; }
+.memorial-services__grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, 269px); margin-block-start: 32px; border-radius: 8px; overflow: hidden; }
+.memorial-services__grid::after { content: ''; position: absolute; inset: 0; border: 1px solid #343434; border-radius: 8px; pointer-events: none; }
+.service-card { position: relative; box-sizing: border-box; padding: 32px 24px 24px; }
+.service-card:not(:nth-child(3n))::after { content: ''; position: absolute; inset-block: 0; inset-inline-end: 0; width: 1px; background: #343434; }
+.service-card:nth-child(-n+3)::before { content: ''; position: absolute; inset-inline: 0; inset-block-end: 0; height: 1px; background: #343434; }
+.service-card__icon { position: relative; width: 72px; height: 72px; }
+.service-card__icon-frame { position: absolute; inset: 0; display: block; }
+.service-card__icon-symbol { position: absolute; left: 20px; top: 24px; display: block; }
+.service-card h3 { margin: 16px 0 4px; font-family: 'Yekan Bakh'; font-size: 20px; font-weight: 700; line-height: 31px; }
+.service-card p { margin: 0; height: 42px; color: #a6a6a6; font-family: 'IRANSansX'; font-size: 14px; font-weight: 400; line-height: 21px; }
+.service-card__more-row { display: flex; width: fit-content; align-items: center; gap: 8px; margin-block-start: 24px; height: 24px; }
+.service-card__more-row > img { display: block; flex-shrink: 0; transition: transform 220ms ease, opacity 220ms ease; }
+.service-card__more { padding: 0; border: 0; background: none; color: #d1c56c; font-family: 'IRANSansX'; font-size: 16px; font-weight: 400; line-height: 24px; cursor: pointer; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 6px; transition: color 220ms ease, text-decoration-color 220ms ease; }
+.service-card__more:focus-visible { color: #e2e2e2; text-decoration-color: #d1c56c; outline: 2px solid #d1c56c; outline-offset: 5px; }
+@media (hover: hover) {
+  .service-card__more-row:hover .service-card__more { color: #e2e2e2; text-decoration-color: #d1c56c; }
+  .service-card__more-row:hover > img { transform: translateX(-3px); opacity: .8; }
+}
+.service-card__more:focus-visible + img { transform: translateX(-3px); opacity: .8; }
+@keyframes services-rise { from { opacity: 0; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .memorial-services[data-reveal='pending'] .memorial-services__heading,
+  .memorial-services[data-reveal='pending'] .service-card { opacity: 0; }
+  .memorial-services[data-reveal='entered'] .memorial-services__heading,
+  .memorial-services[data-reveal='entered'] .service-card { animation: services-rise 1000ms cubic-bezier(.22, 1, .36, 1) var(--services-delay, 0ms) backwards; }
+  .service-card:nth-child(1) { --services-delay: 120ms; }
+  .service-card:nth-child(2) { --services-delay: 200ms; }
+  .service-card:nth-child(3) { --services-delay: 280ms; }
+  .service-card:nth-child(4) { --services-delay: 360ms; }
+  .service-card:nth-child(5) { --services-delay: 440ms; }
+  .service-card:nth-child(6) { --services-delay: 520ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card__more, .service-card__more-row > img { transition: none; }
+  .service-card__more-row:hover > img, .service-card__more:focus-visible + img { transform: none; }
+}

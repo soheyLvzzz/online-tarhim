@@ -1,0 +1,23 @@
+html { background: #000; }
+body { margin: 0; min-width: 1440px; container-type: inline-size; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.landing-preview {
+  --page-width: 1440px;
+  --page-gutter: 50px;
+  --section-gap: 160px;
+  position: relative;
+  width: var(--page-width);
+  min-width: var(--page-width);
+  margin-inline: auto;
+}
+.section-backdrop {
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: max(1440px, 100cqw);
+  transform: translateX(-50%);
+  z-index: -1;
+  overflow: hidden;
+}
+.memorial-hero > .section-backdrop { background: #000; }
+.memorial-about > .section-backdrop { background: #181818; }

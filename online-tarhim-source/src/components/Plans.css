@@ -1,0 +1,43 @@
+@font-face { font-family: 'IRANSansXFaNum'; src: url('/fonts/IRANSansXFaNum-ExtraBold.woff2') format('woff2'); font-style: normal; font-weight: 800; font-display: swap; }
+.memorial-plans { position: relative; isolation: isolate; width: 1440px; box-sizing: border-box; padding: 80px 50px 80px; margin-block-start: 80px; color: #e2e2e2; }
+.memorial-plans::before { content: ''; position: absolute; z-index: -1; left: 50%; top: 0; bottom: 0; width: max(1440px, 100cqw); transform: translateX(-50%); background: #000; }
+.memorial-plans__heading { text-align: center; }
+.memorial-plans__eyebrow { display: flex; justify-content: center; align-items: center; gap: 24px; color: #d1c56c; font-family: 'IRANSansXFaNum'; font-size: 14px; line-height: 21px; }
+.memorial-plans__eyebrow img { display: block; flex-shrink: 0; }
+.memorial-plans h2 { margin: 8px 0 0; color: #fff; font-family: 'Yekan Bakh'; font-size: 36px; font-weight: 700; line-height: 56px; }
+.memorial-plans__grid { display: grid; grid-template-columns: repeat(3, 426px); justify-content: space-between; gap: 31px; margin-block-start: 48px; }
+.plan-card { position: relative; box-sizing: border-box; height: 469px; padding: 47px 23px 23px; border: 1px solid transparent; border-radius: 8px; background: #1d1d1d; text-align: right; transition: border-color 240ms ease; }
+.plan-card h3 { margin: 0; font-family: 'Yekan Bakh'; font-size: 24px; font-weight: 700; line-height: 37px; }
+.plan-card__description { height: 48px; margin: 4px 0 0; color: #a6a6a6; font-family: 'IRANSansX'; font-size: 16px; font-weight: 400; line-height: 24px; }
+.plan-card__divider { height: 1px; background: #343434; margin-block-start: 24px; }
+.plan-card__features { display: flex; flex-direction: column; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.plan-card__features li { display: flex; align-items: center; gap: 8px; height: 21px; font-family: 'IRANSansX'; font-size: 14px; font-weight: 400; line-height: 21px; white-space: nowrap; }
+.plan-card__features img { display: block; flex-shrink: 0; }
+.plan-card__price { display: flex; align-items: center; justify-content: space-between; margin-block-start: 37px; height: 30px; color: #d1c56c; font-family: 'IRANSansXFaNum'; }
+.plan-card__price > span { font-size: 16px; font-weight: 500; line-height: 24px; }
+.plan-card__price strong { font-size: 20px; font-weight: 800; line-height: 30px; white-space: nowrap; }
+.plan-card__request { position: relative; isolation: isolate; overflow: hidden; display: block; width: 100%; height: 46px; box-sizing: border-box; margin-block-start: 19px; padding: 10px 20px; border: 1px solid #d1c56c; border-radius: 4px; background: transparent; color: #d1c56c; font-family: 'IRANSansXFaNum'; font-size: 16px; font-weight: 500; line-height: 24px; cursor: pointer; transition: color 240ms ease; }
+.plan-card__request::before { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(101.64673017181146deg, #d1c56c 11.091%, #6b6537 138.52%); opacity: 0; transition: opacity 240ms ease; }
+.plan-card__badge { position: absolute; top: -17px; right: 27px; padding: 5px 10px; border-radius: 4px; background: #d1c56c; color: #121212; font-family: 'IRANSansXFaNum'; font-size: 14px; font-weight: 500; line-height: 21px; white-space: nowrap; pointer-events: none; }
+.plan-card:has(:focus-visible) { border-color: #d1c56c; }
+.plan-card:has(:focus-visible) .plan-card__request { color: #121212; }
+.plan-card:has(:focus-visible) .plan-card__request::before { opacity: 1; }
+.plan-card__request:focus-visible { outline: 2px solid #d1c56c; outline-offset: 4px; }
+@media (hover: hover) {
+  .plan-card:hover { border-color: #d1c56c; }
+  .plan-card:hover .plan-card__request { color: #121212; }
+  .plan-card:hover .plan-card__request::before { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plan-card, .plan-card__badge, .plan-card__request, .plan-card__request::before { transition: none; }
+}
+@keyframes plans-rise { from { opacity: 0; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .memorial-plans[data-reveal='pending'] .memorial-plans__heading,
+  .memorial-plans[data-reveal='pending'] .plan-card { opacity: 0; }
+  .memorial-plans[data-reveal='entered'] .memorial-plans__heading,
+  .memorial-plans[data-reveal='entered'] .plan-card { animation: plans-rise 1000ms cubic-bezier(.22, 1, .36, 1) var(--plans-delay, 0ms) backwards; }
+  .plan-card:nth-child(1) { --plans-delay: 120ms; }
+  .plan-card:nth-child(2) { --plans-delay: 240ms; }
+  .plan-card:nth-child(3) { --plans-delay: 360ms; }
+}

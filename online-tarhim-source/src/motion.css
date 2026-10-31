@@ -1,0 +1,50 @@
+/* A single, quiet entrance. Separate translate leaves existing hover transforms intact. */
+@keyframes tarhim-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tarhim-rise {
+  from { opacity: 0; translate: 0 6px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* Content is visible by default, including when reduced motion is requested. */
+@media (prefers-reduced-motion: no-preference) {
+  .memorial-hero__background {
+    animation: tarhim-appear 1800ms cubic-bezier(.22, 1, .36, 1) backwards;
+  }
+  .memorial-hero__shade {
+    animation: tarhim-appear 1400ms ease-out backwards;
+  }
+  .site-header__brand,
+  .site-header__phone,
+  .site-header__navigation button {
+    animation: tarhim-rise 900ms cubic-bezier(.22, 1, .36, 1) var(--entrance-delay, 180ms) backwards;
+  }
+  .site-header__brand { --entrance-delay: 120ms; }
+  .site-header__phone { --entrance-delay: 240ms; }
+  .site-header__navigation button:nth-child(1) { --entrance-delay: 160ms; }
+  .site-header__navigation button:nth-child(2) { --entrance-delay: 200ms; }
+  .site-header__navigation button:nth-child(3) { --entrance-delay: 240ms; }
+  .site-header__navigation button:nth-child(4) { --entrance-delay: 280ms; }
+  .site-header__navigation button:nth-child(5) { --entrance-delay: 320ms; }
+  .site-header__navigation button:nth-child(6) { --entrance-delay: 360ms; }
+  .memorial-hero__eyebrow,
+  .memorial-hero h1,
+  .memorial-hero__description,
+  .memorial-hero__button {
+    animation: tarhim-rise 1000ms cubic-bezier(.22, 1, .36, 1) var(--entrance-delay, 320ms) backwards;
+  }
+  .memorial-hero__eyebrow { --entrance-delay: 320ms; }
+  .memorial-hero h1 { --entrance-delay: 440ms; }
+  .memorial-hero__description { --entrance-delay: 560ms; }
+  .memorial-hero__button--primary { --entrance-delay: 680ms; }
+  .memorial-hero__button--secondary { --entrance-delay: 760ms; }
+}
+
+/* Keyboard interaction reveals the focused control immediately, even during entrance. */
+.site-header button:focus-visible,
+.site-header__phone:focus-visible,
+.memorial-hero__button:focus-visible {
+  animation: none;
+}

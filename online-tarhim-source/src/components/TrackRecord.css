@@ -1,0 +1,12 @@
+.memorial-record { position: relative; isolation: isolate; width: 1440px; box-sizing: border-box; margin-block-start: 80px; padding: 120px 50px; color: #fff; text-align: center; }
+.memorial-record::before { content: ''; position: absolute; z-index: -1; inset-block: 0; left: 50%; width: max(1440px, 100cqw); transform: translateX(-50%); background: #000000; }
+.memorial-record__eyebrow { display: flex; justify-content: center; align-items: center; gap: 24px; color: #d1c56c; font-family: 'IRANSansXFaNum'; font-size: 14px; font-weight: 400; line-height: 21px; }
+.memorial-record__eyebrow img { display: block; flex-shrink: 0; }
+.memorial-record h2 { margin: 8px 0 0; font-family: 'Yekan Bakh'; font-size: 36px; font-weight: 700; line-height: 56px; }
+.memorial-record__heading > p { margin: 0; color: #a6a6a6; font-family: 'IRANSansX'; font-size: 16px; font-weight: 400; line-height: 24px; }
+.memorial-record__statistics { display: flex; justify-content: center; align-items: flex-start; gap: 48px; margin: 32px 0 0; padding: 0; }
+.memorial-record__stat { display: flex; flex-direction: column; flex-shrink: 0; }
+.memorial-record dt { order: 2; font-family: 'Yekan Bakh'; font-size: 20px; font-weight: 600; line-height: 31px; white-space: nowrap; }
+.memorial-record dd { order: 1; margin: 0; color: #d1c56c; font-family: 'IRANSansXFaNum'; font-size: 64px; font-weight: 800; line-height: 96px; white-space: nowrap; }
+.memorial-record__number { display: inline-flex; flex-direction: row; direction: ltr; align-items: baseline; unicode-bidi: isolate; }
+.memorial-record__plus { font-family: Arial, sans-serif; font-weight: 700; }
