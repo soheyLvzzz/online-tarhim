@@ -129,3 +129,14 @@ python3 scripts/make-preview.py
 راهنمای محیط توسعه، گزارش ده مرحله و اطلاعات موردنیاز در docs/phase-06/ قرار دارند. npm run check برای TypeScript و هفت تست موجود است؛ npm run build خروجی dist را می‌سازد. محیط فعلی با Node 24.22.1 بررسی شد؛ نسخه در .node-version ثبت است. این لندینگ متغیر محیطی الزامی ندارد و .env.example فقط راهنماست.
 
 مخزن Git محلی آماده است و در بستهٔ فاز ۶، online-tarhim-local.git.bundle برای بازیابی تاریخچه وجود دارد. Staging و remote هنوز آماده نیستند؛ این فاز کامل یا منتشرشده اعلام نمی‌شود. src و public نسبت به نسخهٔ ۱۷ تغییر نکرده‌اند.
+
+## فاز ۷ زیرساخت نسخهٔ استاتیک
+
+فاز ۶ بسته شد؛ گزارش نهایی در docs/phase-06/closure-report.md است. فاز ۷ کنترل build و بررسی فایل‌های آنلاین را اضافه می‌کند، بدون تغییر ظاهر یا API/دیتابیس.
+
+- npm run check: TypeScript و ۱۲ تست.
+- npm run build: ساخت تمیز و کنترل فایل‌ها و تولید dist/health.json.
+- npm run healthcheck -- https://onlinetarhim.com/: مقایسهٔ بایت‌های فایل‌های هاست با manifest.
+- برای staging همان فرمان را با https://onlinetarhim.com/staging/ اجرا کنید.
+
+این health check فقط فایل استاتیک را بررسی می‌کند، نه عملکرد کامل برنامه. پیش از آپلود manifest جدید ممکن است HTTP 404 بدهد. اسناد فاز ۷ و بسته‌های محیطی در docs/phase-07/ توضیح داده شده‌اند؛ بررسی نهایی روی هاست پس از اقدام کاربر باقی است.

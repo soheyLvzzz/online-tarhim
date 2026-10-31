@@ -1,36 +1,27 @@
-# Online Tarhim project guidance
+# Online Tarhim current project guidance
 
-The user adopted the supplied custom workflow v2 on 2026-10-31. Follow it phase by phase together with the memorial engineering skill. Explicit user instructions take precedence.
+Read docs/references/custom-workflow-v2.txt and docs/references/memorial-platform-engineering.md together with docs/current-phase-assessment.md before project work. The original workflow DOCX is preserved in docs/references/custom-workflow-v2.docx. Follow the user's explicit instructions first.
 
-Before continuing project work, read:
+## Current phase
 
-- `docs/references/custom-workflow-v2.txt` — complete text of the adopted 17-phase workflow.
-- `docs/references/custom-workflow-v2.docx` — original authoritative workflow, preserved unchanged.
-- `docs/references/memorial-platform-engineering.md` — original supplied engineering skill.
-- `docs/current-phase-assessment.md` — evidence and recorded continuation point.
+Phases 1–3 are closed by explicit user approval; do not reprocess them. Phase 4 chose existing React/TypeScript/CSS/Vite static output and direct phone contact for the first release on the existing host. Phase 5 documented static content, no application API/database for this release. Full platform features are deferred, not deleted or approved.
 
-Current continuation: Phase 6 is in progress at the user's explicit request. Read docs/phase-06/progress-report.md, development-guide.md and required-inputs.md. Local development setup is prepared, but user-host Staging and remote repository are not ready. Do not mark the phase complete or start Phase 7. Phase 4 and 5 outputs remain in their folders.
+Phase 6 is closed. Read docs/phase-06/closure-report.md. Public GitHub https://github.com/soheyLvzzz/online-tarhim was fetched read-only: commit 1c3cb8eb5142c7649186f4da702d13fa6e1c6fa3 has .gitignore, .node-version, .env.example and public/favicon.ico at repository root, matching local. App source lives in online-tarhim-source/. Root and staging loaded in browser, and user confirmed favicon fixed. Do not repeat old missing-file questions.
 
-The user explicitly closed Phases 1–3 and instructed that they must not be reprocessed. Respect this closure. Do not ask the user to repeat feasibility analysis; request only operational destination details when needed for actual deployment. Do not claim an independent host test.
+Phase 7 is current. Read docs/phase-07/infrastructure.md, progress-report.md and handoff-guide.md. New developer scripts validate static build assets and generate dist/health.json; check-live.mjs compares real deployed public files to that manifest. This is not a server health API or proof of working business functions. Local TypeScript, 12 tests and build pass; initial live health check returned 404 for not-yet-uploaded health.json. Keep Phase 7 open until user uploads both new environment packages and real online checks pass or differences are resolved. Do not start Phase 8 implicitly.
 
-The user chose direct telephone contact for the first release and publication to their existing host and domain. Keep React, TypeScript, CSS and Vite with static dist output. No new backend, database or ORM is needed for that first-release scope. Full-platform features are deferred, not deleted or approved by this choice.
+## Scope and user preferences
 
-Preserve v17's seven sections and footer. The existing desktop implementation covers part of Phase 8, while mobile/tablet, browser visual QA and real control destinations remain outstanding. A direct-contact release still requires explicit behavior decisions for article/playback controls; do not silently turn every button into a phone link. The authoritative contact number is not yet selected; header and footer currently differ.
+Preserve all seven sections, header, footer, black TrackRecord background and current favicon. No src/public/CSS/behavior changes are authorized by basic infrastructure work. User knows destinationless buttons and prioritizes the landing being visible; do not repeatedly reopen those known limitations or silently convert all controls into phone links. The primary request number remains unselected.
 
-For each phase, track its steps, evidence, open decisions, required outputs and acceptance condition. Ask material questions during the work before making dependent choices. Register section visual approval before adding its functionality. Continue only independent, unambiguous work while a required answer is pending.
+Report in Persian. For EVERY workflow step distinguish required action, actual action, evidence/output, remaining work and status. Do not mark not-needed work as implemented or local/mock checks as live verification. Phase outputs must exist before the next phase. Ask material phase-specific missing data during work, not after dependent implementation. Phase 7 currently needs no new account/contact/database data; it needs the user's upload confirmation.
 
-Custom events currently emitted by controls are integration placeholders, not working destination pages or APIs. Report this honestly. No new backend, database, deployment or external-service integration is authorized solely by adopting the workflow.
+## Deployment and repository
 
-Report in Persian. Separate observed facts, user-reported completion and unverified items. Update the assessment after meaningful phase progress. Do not claim permanent ChatGPT memory or a Project Sources attachment from local file copies.
+User domain: https://onlinetarhim.com/; cPanel, user-reported document root public_html; staging is /staging/. User performs all panel and GitHub uploads with guidance. Do not sign in, upload or push on their behalf without a new instruction. Do not request passwords, PATs or private keys in chat. Do not expose source/docs/.env files on public_html.
 
-Latest user steering: phase outputs must exist before moving to the next phase. The user knows destinationless buttons and wants the landing appearance online first so the domain is not empty. Record known limitations honestly without repeatedly reopening them or treating all future full-platform features as launch requirements. Do not silently remove/alter controls. Ask for phase-specific missing data during work. Phase 5 primary contact number was asked but no selection returned; leave it unresolved and do not ask again in the same turn. The data model can be complete without that content value; contact implementation later needs the real number.
+Production and staging HTML differ in robots meta, and have separate checksums/build IDs. Never copy one environment's health.json to the other. Never manually edit checksums to hide a failed check. All release ZIPs need current/real timestamps, regular files 0644, directories 0755; old 1980 ZIP timestamps caused cache concerns and index.html 0600 caused an earlier packaging defect.
 
-Phase reports must cover every workflow step with the required action, actual action taken, evidence/output, remaining work and status. Distinguish implemented, documented, not needed for this release and waiting for user input. User now requests all Phase 6 operational inputs together. No hosting account credentials should be put in chat, source or ZIP. Git is local only until a remote is explicitly identified.
+Use existing matching assets; do not redraw the logo. favicon-white-v2.png is an unchanged PNG copy of the supplied white logo; favicon.ico is a mechanical multi-size export. User confirmed final tab display.
 
-Latest Phase 6 inputs: user domain onlinetarhim.com, cPanel, user-reported document root public_html. User will perform panel/upload operations themselves with teaching; do not initialize browser/login on their behalf. User wants their own GitHub repository. Provide Private repository guidance; no remote exists yet. A separate /staging/ path is proposed for first verification; actual creation and access level remain unconfirmed. Staging-only distribution has noindex,nofollow; never deploy it unchanged to final root. Track user-reported actions separately from verified outcomes.
-
-Latest user report: staging now loads with the corrected archive; treat as user-confirmed, not agent browser-verified. Only TrackRecord.css background was changed from #121212 to #000000 per explicit request; no other visual/behavior edit. GitHub creation/source upload is still unreported. Request repository URL for the remaining Phase 6 task, then use current source rather than the old gray-background source kit. Do not start Phase 7 yet.
-
-Latest user states files are now deployed manually in public_html root, not just staging. Favicon uses byte-identical white public/assets/logo.png copied as public/favicon-white.png with rel=icon in index.html. Root deployment package must not carry staging noindex meta. No section changes authorized. For Phase 6 closure, verify latest source is committed to the user's GitHub repository and clarify whether a separate working staging URL still exists. Ask only repository URL and whether it is empty/has files; never passwords/tokens. User performs uploads; do not access accounts on their behalf.
-
-Latest exact repository: https://github.com/soheyLvzzz/online-tarhim; user says it is empty. User states staging is gone and site is only at root. Do not claim Phase 6 complete: source upload and a separate staging environment remain. Browser inspection of root and /index.html found zero icon links and robots noindex,nofollow, despite live current black-stats CSS/JS. Local favicon fix now uses favicon-white-v2.png?v=2, an unchanged copy of the supplied white logo. Provide a two-file root patch and source ZIP for user's own upload; do not access GitHub account or push without user instruction. Root page has been observed to load, but final favicon after upload is unverified.
+Keep approvals and observed facts distinct. Local copies do not add files to ChatGPT Project Sources or permanent account memory. Do not publish/change DNS/services or start new backend architecture merely because the workflow lists a future feature.

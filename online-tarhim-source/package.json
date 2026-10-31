@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build --emptyOutDir && node scripts/verify-static-build.mjs",
     "typecheck": "tsc --noEmit",
-    "test": "node --test scripts/test_scroll_reveal.cjs && python3 -m unittest discover -s scripts -p \"test_*.py\"",
-    "check": "npm run typecheck && npm test"
+    "test": "node --test scripts/test_scroll_reveal.cjs scripts/test_static_infrastructure.mjs && python3 -m unittest discover -s scripts -p \"test_*.py\"",
+    "check": "npm run typecheck && npm test",
+    "healthcheck": "node scripts/check-live.mjs",
+    "verify:static": "node scripts/verify-static-build.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
