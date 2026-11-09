@@ -1,0 +1,15 @@
+{
+  "name": "online-tarhim-recovered",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "build": "node scripts/build.mjs production",
+    "build:staging": "node scripts/build.mjs staging",
+    "test": "npm run build && npm run build:staging && node --experimental-vm-modules --test scripts/site.test.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}
